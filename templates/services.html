@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Offered - Tharros Consults</title>
+
+    <style>
+        body {
+            background-image: url("/static/uploads/about_pic.png");
+            background-size: cover;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #17313D;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            animation: slideDown 1s ease-in-out; 
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-right: 150px;
+        }
+
+        .nav-links li:last-child {
+            margin-right: 145px;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
+            padding: 25px;
+            text-decoration: none;
+            font-size: 20px; /* Adjust this value to match the font size of Home and Contact pages */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #204150;
+            color: #C2D0CA; 
+        }
+
+        .container1, .container2 {
+            max-width: 1200px;
+            margin: 100px auto 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            font-family: Montserrat, sans-serif;
+            color: #17313D;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        ul {
+            font-size: 18px;
+        }
+
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-member {
+            flex: 1 1 30%;
+            max-width: 30%;
+            margin: 20px;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #17313D;
+            background-color: #f1f1f1;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .container1, .container2 {
+                margin: 100px 20px 40px 20px;
+            }
+
+            .team-member {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home')}}">Home</a></li>
+            <li><a href="{{ url_for('services')}}">Services</a></li>
+            <li><a href="{{ url_for('contact')}}">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container1">
+        <h1>Services Offered</h1>
+        <p>We are a career and business coaching company that’s keen on helping individuals and startups scale up.</p>
+        <h3>Services Offered:</h3>
+        <ul>
+            <li><strong>Career coaching:</strong> Whether you are still studying, fresh out of college, or looking to switch careers, we are here to listen and hold your hand through the process. The goal is simple: get you to your goal.</li>
+            <li><strong>Academic admission & scholarship coaching:</strong> From choosing the best fit in terms of course options, reviewing your statement of purpose (SOP), and more, we coach prospective students to help position you for undergraduate & postgraduate admission and scholarship.</li>
+            <li><strong>Startup business consulting:</strong> For startups and small to mid-scale businesses, we offer tailored financial and strategy advisory services.</li>
+        </ul>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to empower our clients to discover and utilize their strengths, enabling them to excel in their professional lives. We believe in a holistic approach to career development, focusing on both personal and professional growth.</p>
+    </div>
+
+    <div class="container2">
+        <h2>Coach Bio</h2>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="/static/uploads/team1.jpg" alt="Team Member 1">
+                <h3>Ese Deolu-Ajayi</h3>
+                <p>Lead Coach</p>
+                <p>Hello, my name is Ese, it’s lovely to meet you!<br>How does a person successfully navigate the “what if's” that come with transitioning in order to succeed at their chosen career path? The uncertainty, nervousness, and ambiguity of it all. I know firsthand what it’s like to start something new, what it’s like to transition between different career paths, and what it’s like to have to start over. The best part is that I truly love to help people do just that - excel at their careers and businesses.</p>
+                <p>Having successfully helped a lot of people start and transition between career paths, I have found that in 8 out of 10 times, folks just need someone to handhold them so that they can see and be confident in what’s already within them. That’s what I am here to do!</p>
+                <p>I am a Certified Product Manager and Lead Consultant with over 10 years of professional experience that cuts across Banking, Academia, & IT Consulting. I have successfully transitioned between roles in Trade Finance, Entrepreneurship academic Research, and IT Management. I also have a Master's degree in International Business Management. Now that you’ve heard about me, I would love to hear from you and share in your success story. Let’s connect.</p>
+            </div>
+            <div class="team-member">
+                <img src="/static/uploads/team2.jpg" alt="Team Member 2">
+                <h3>Mareh Agoreyo</h3>
+                <p>Business Strategist</p>
+            </div>
+            <div class="team-member">
+                <img src="/static/uploads/team3.jpg" alt="Team Member 3">
+                <h3>Seyi Makinde</h3>
+                <p>Career Advisor</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tharros Consults. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            for (const link of navLinks) {
+                link.addEventListener('click', smoothScroll);
+            }
+
+            function smoothScroll(event) {
+                event.preventDefault();
+                const targetId = event.currentTarget.getAttribute('href').substring(0);
+                window.location.href = targetId;
+            }
+
+            const teamMembers = document.querySelectorAll('.team-member');
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            teamMembers.forEach(member => {
+                observer.observe(member);
+            });
+        });
+    </script>
+</body>
+</html>
