@@ -67,8 +67,8 @@
         .contact-container {
             max-width: 600px;
             margin: 20px auto;
-            background: #17313D;
-            color: white;
+            background: #BFD8E4;
+            color: black;
             padding: 30px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
@@ -99,8 +99,8 @@
         }
 
         button[type="submit"] {
-            background-color: #C2D0CA;
-            color: black;
+            background-color: #17313D;
+            color: white;
             font-weight: 550;
             padding: 10px;
             width: 100%;
@@ -112,7 +112,7 @@
         }
 
         button[type="submit"]:hover {
-            background-color: #5C686D;
+            background-color: #374146;
         }
 
         textarea::placeholder {
@@ -227,14 +227,15 @@
         <ul class="nav-links">
             <li><a href="{{ url_for('home')}}">Home</a></li>
             <li><a href="{{ url_for('services')}}">Services</a></li>
+            <li><a href="{{ url_for('book_coach') }}">Book A Coach</a></li>
             <li><a href="{{ url_for('contact')}}">Contact Us</a></li>
         </ul>
     </nav>
 
     <div class="text-box">
         <h1>Contact Us</h1>
-        <p>Email, call or complete the form to book a session with
-            <br>our coaches.
+        <p>Email, call or complete the form if you have further
+            <br>enquiries.
         </p>
         <p>tharrosconsults@gmail.com</p>
         <p>+1 (437) 974-3929</p>
@@ -250,20 +251,28 @@
         <h2>Get In Touch</h2>
         <form id="contactForm">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Your first name" required>
             </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Your last name" required>
+            </div>
+
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
             </div>
+
             <div class="form-group">
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" placeholder="Type a message..." required></textarea>
             </div>
+
             <button type="submit">Submit</button>
             <div class="paragraph">
-                <p>By clicking <em>Submit</em>, you are agreeing to our <strong>Terms</strong> and <strong>Conditions</strong> !</p>
+                <p>By clicking <em>Submit</em>, you are agreeing to our <strong>Terms</strong> and <strong>Conditions</strong>!</p>
             </div>
         </form>
     </div>

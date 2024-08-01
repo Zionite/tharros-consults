@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book A Coach - Tharros Consults</title>
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #17313D;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            animation: slideDown 1s ease-in-out;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links li {
+            margin-right: 140px;
+        }
+        
+        .nav-links li:last-child {
+            margin-right: 140px;
+        }
+        
+        .nav-links a {
+            display: block;
+            color: white;
+            padding: 25px 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: #204150;
+            color: #C2D0CA;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 100px auto 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            color: #17313D;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        label {
+            font-size: 16px;
+            color: #17313D;
+        }
+        
+        input, textarea {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #17313D;
+            outline: none;
+        }
+        
+        button {
+            font-size: 18px;
+            padding: 12px;
+            background-color: #17313D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #204150;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #17313D;
+            background-color: #f1f1f1;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 80px 20px 40px 20px;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .nav-links li {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .nav-links a {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('book_coach') }}">Book A Coach</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Book A Coach</h1>
+        <form id="book-coach-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Tharros Consults. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('book-coach-form');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Your booking request has been submitted successfully.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

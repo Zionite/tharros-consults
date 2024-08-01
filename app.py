@@ -14,6 +14,10 @@ def services():
 def contact():
     return render_template('contact.html')
 
+@app.route('/book-coach')
+def book_coach():
+    return render_template('book_coach.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
