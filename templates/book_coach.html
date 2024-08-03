@@ -7,7 +7,9 @@
 
     <style>
         body {
-            background-color: #f4f4f4;
+            background-color: #17313D;
+            background-image: url("/static/uploads/book_pic.png");
+            background-size: cover;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding-top: 80px;
@@ -18,12 +20,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #17313D;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            animation: slideDown 1s ease-in-out;
+            transition: top 0.3s;
         }
-        
+
         .nav-links {
             display: flex;
             justify-content: flex-end;
@@ -31,44 +32,54 @@
             margin: 0;
             padding: 0;
         }
-        
+
         .nav-links li {
-            margin-right: 140px;
+            margin-right: 200px;
         }
-        
+
         .nav-links li:last-child {
-            margin-right: 140px;
+            margin-right: 130px;
         }
-        
+
         .nav-links a {
             display: block;
             color: white;
-            padding: 25px 30px;
+            padding: 25px;
             text-decoration: none;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
+
         .nav-links a:hover {
             background-color: #204150;
-            color: #C2D0CA;
+            color: #C2D0CA; 
         }
         
         .container {
-            max-width: 700px;
-            margin: 100px auto 40px auto;
+            max-width: 500px;
+            margin: 100px 150px 0 auto; 
             padding: 40px;
-            background: #ffffff;
+            background: #17313D;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
             animation: fadeIn 1s ease-in-out;
         }
         
-        h1 {
+        h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 36px;
-            color: #17313D;
+            color: #FFFFFF;
             margin-bottom: 20px;
             text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         form {
@@ -76,68 +87,87 @@
             flex-direction: column;
             gap: 20px;
         }
-        
-        label {
-            font-size: 16px;
-            color: #17313D;
+
+        .form-row {
+            display: flex;
+            gap: 10px;
         }
         
-        input, textarea {
-            font-size: 16px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .form-row label {
+            width: 150px;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+        
+        .form-row input {
+            flex: 1;
+            font-size: 12px;
+            padding: 8px;
+            border-radius: 10px;
             transition: border-color 0.3s ease;
         }
         
-        input:focus, textarea:focus {
-            border-color: #17313D;
+        label {
+            font-size: 14px;
+            color: #FFFFFF; 
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #FFFFFF;
             outline: none;
         }
         
+        textarea {
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+        
+        textarea:focus {
+            border-color: #FFFFFF;
+            outline: none;
+        }
+        
+        textarea::placeholder {
+            font-size: 0.9em;
+            color: grey;
+        }
+
         button {
-            font-size: 18px;
-            padding: 12px;
-            background-color: #17313D;
-            color: white;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #FFFFFF;
+            color: #17313D;
+            width: 250px;
             border: none;
-            border-radius: 5px;
+            border-radius: 15px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin: 0 auto;
+            display: block; 
         }
         
         button:hover {
-            background-color: #204150;
+            background-color: #AFB4B6;
         }
         
         .footer {
             text-align: center;
+            font-size: 14px;
             padding: 20px;
-            color: #17313D;
-            background-color: #f1f1f1;
+            color: white;
             width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
+            bottom: 0px;
         }
 
         @media (max-width: 768px) {
@@ -178,33 +208,48 @@
         <ul class="nav-links">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('services') }}">Services</a></li>
-            <li><a href="{{ url_for('book_coach') }}">Book A Coach</a></li>
             <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h1>Book A Coach</h1>
+        <h2>Book A Coach!</h2>
+        <h4>We Provide The Best Solution For Your Business and Career Development. <i>Book</i> a consultation with our coaches.</h4>
+
         <form id="book-coach-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <div class="form-row">
+                <div>
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="name" placeholder="First name" required style="width: 150px;">
+                </div>
+                <div>
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="name" placeholder="Last name" required style="width: 150px;">
+                </div>
+            </div>
             
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
             
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" placeholder="+ 174 234 EXAM-PLE" required>
             
-            <label for="date">Preferred Date:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="time">Preferred Time:</label>
-            <input type="time" id="time" name="time" required>
-            
+            <div class="form-row">
+                <div>
+                    <label for="date">Pick A Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div>
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="message" placeholder="Tell us a little about your business/career" required></textarea>
             
-            <button type="submit">Submit</button>
+            <button type="submit"><strong>Submit</strong></button>
         </form>
     </div>
 
@@ -221,6 +266,19 @@
                 alert('Your booking request has been submitted successfully.');
                 form.reset();
             });
+        });
+
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.style.top = '-80px';
+            } else {
+                navbar.style.top = '0'; 
+            }
+            lastScrollTop = scrollTop;
         });
     </script>
 </body>

@@ -58,17 +58,17 @@
         }
 
         .nav-links li {
-            margin-right: 140px;
+            margin-right: 200px;
         }
 
         .nav-links li:last-child {
-            margin-right: 140px;
+            margin-right: 130px;
         }
 
         .nav-links a {
             display: block;
             color: white;
-            padding: 25px 30px;
+            padding: 25px 25px;
             text-decoration: none;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
@@ -99,16 +99,6 @@
             background-color: #204150;
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
         .footer {
             text-align: left;
@@ -224,7 +214,6 @@
         <ul class="nav-links">
             <li><a href="{{ url_for('home')}}">Home</a></li>
             <li><a href="{{ url_for('services')}}">Services</a></li>
-            <li><a href="{{ url_for('book_coach') }}">Book A Coach</a></li>
             <li><a href="{{ url_for('contact')}}">Contact Us</a></li>
         </ul>
     </nav>
@@ -242,7 +231,9 @@
         <br>what you already have to get to where you need to be.</h4>
     </div>
 
-    <a href="{{ url_for('book_coach') }}"><button id="bookACoach">Book A Coach</button></a>
+    <a href="{{ url_for('book_coach') }}">
+        <button id="bookACoach">Book A Coach</button>
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
